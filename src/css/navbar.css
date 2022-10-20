@@ -1,0 +1,103 @@
+.navbar {
+    height: 100px;
+    padding: 0px 5% 0px 5%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo svg {
+    width: 50px;
+    transition: transform 150ms;
+}
+
+.logo svg:hover {
+    transform: scale(1.2);
+}
+
+.burguer {
+    display: flex;
+    align-items: center;
+}
+
+.burguer button {
+    background-color: #00000000;
+    width: 40px;
+    height: 40px;
+    border: none;   
+
+    transition: transform 150ms;
+}
+
+.burguer button:hover {
+    transform: scale(1.2);
+}
+
+.burguer svg {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-menu {
+    background-color: var(--white);
+    box-shadow: 0px 0px 15px -5px black;
+    padding: 20px;
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    right: -300px;
+    transition: right 500ms;
+    transition-timing-function: ease-out;
+}
+
+.nav-menu-visible {
+    right: 0;
+}
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--white);
+}
+
+.arrow button {
+    background-color: #00000000;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.arrow button:hover {
+    background-color: #0000001f;
+}
+
+.arrow svg {
+    width: 50px;
+    height: 100%;
+    transition: transform 500ms;
+    transition-timing-function: ease-out;
+}
+
+.nav-links > .link {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.nav-links > .link button {
+    width: 100%;
+    text-transform: uppercase;
+    text-align: start;
+    border-radius: 5px;
+}
+
+.nav-links > .link button:hover {
+    background-color: #0000001f;
+}
