@@ -1,9 +1,21 @@
+/* _-_- NAVBAR -_-_ */
+
 .navbar {
+    position: fixed;
+    top: 0;
     height: 100px;
-    padding: 0px 5% 0px 5%;
+    width: 100%;
+    padding: 0 3%;
 
     display: flex;
     justify-content: space-between;
+
+    transition: background-color 300ms, box-shadow 300ms;
+}
+
+.navbar-scroll {
+    background-color: var(--white);
+    box-shadow: 0px 0px 15px -10px black;
 }
 
 .logo {
@@ -13,6 +25,12 @@
 
 .logo svg {
     width: 50px;
+    height: 50px;
+    padding: 3px;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    margin-right: 10px;
+
     transition: transform 150ms;
 }
 
@@ -45,18 +63,19 @@
 
 .nav-menu {
     background-color: var(--white);
-    box-shadow: 0px 0px 15px -5px black;
     padding: 20px;
     height: 100vh;
     width: 300px;
     position: fixed;
     right: -300px;
-    transition: right 500ms;
+    
+    transition: right 500ms, box-shadow 500ms;
     transition-timing-function: ease-out;
 }
 
 .nav-menu-visible {
     right: 0;
+    box-shadow: 0px 0px 15px -5px black;
 }
 
 .arrow {
@@ -64,7 +83,8 @@
     justify-content: center;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 1px solid var(--black);
+    box-shadow: 0px 15px 15px -20px black;
 }
 
 .arrow button {
@@ -100,4 +120,44 @@
 
 .nav-links > .link button:hover {
     background-color: #0000001f;
+}
+
+/* _-_- HOME -_-_ */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .burguer, .arrow {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        background-color: #00000000;
+        width: auto;
+        height: auto;
+        padding: 0px;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        height: 100%;
+    }
+
+    .nav-links > .link {
+        margin-bottom: 0;
+    }
+
+    .nav-links > .link button {
+        height: 100%;
+        border-radius: 0;
+    }
 }
