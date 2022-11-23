@@ -5,15 +5,14 @@ const Modal = ({data, setModal}) => {
     const {show, info} = data
 
     useEffect(() => {
-        const $modalBg = document.querySelector('.modal-bg')
         const $modal = document.querySelector('.modal')
         
         if (show) {
-            $modalBg.classList.add('modal-bg-visible')
-            $modal.style.top = (window.innerHeight / 2 - $modal.clientHeight / 2) + 'px'
+            $modal.style.bottom = (window.innerHeight / 2 - $modal.clientHeight / 2) + 'px'
+            document.body.style.overflowY = 'hidden'
         } else {
-            $modal.style.top = (-$modal.clientHeight) + 'px'
-            $modalBg.classList.remove('modal-bg-visible')
+            $modal.style.bottom = '100vh'
+            document.body.style.overflowY = 'scroll'
         }
 
     }, [info, show])
@@ -24,11 +23,11 @@ const Modal = ({data, setModal}) => {
 
 
   return (
-    <div onClick={hideModal} className='modal-bg'>
-        <div onClick={(e) => {e.stopPropagation()}} className='modal'>
-            <h2 className='title'>{info.title ? info.title : null}</h2>
+    <div onClick={hideModal} className={'modal-bg ' + (show ? 'modal-bg-visible' : null)}>
+        <div onClick={(e) => {e.stopPropagation()}} className={'modal ' + (show ? 'modal-visible' : null)}>
+            <h2 className='title'>{info.title}</h2>
             <ul className='features'>
-                {info.features ? info.features.map((feature, index) => <li key={index}>{feature}</li>) : null}
+                {info.features.map((feature, index) => <li key={index}>{feature}</li>)}
             </ul>
             <button onClick={hideModal} className='btn'>cerrar</button>
         </div>

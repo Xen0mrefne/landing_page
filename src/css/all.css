@@ -14,6 +14,10 @@
     --red-opacity: rgba(255, 120, 120, 0.4);
     --green-opacity: rgba(120, 255, 120, 0.4);
     --blue-opacity: rgba(120, 120, 255, 0.4);
+    --color-1: #8a5422;
+    --color-1-opacity: #8a54225f;
+    --color-2: #D68E4B;
+    --color-2-opacity: #D68E4B5f;
     --font-1: 'Roboto', sans-serif;
 }
 

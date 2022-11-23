@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import Arrow from '../icons/Arrow'
-import Burguer from '../icons/Burguer'
-import Start from '../icons/Start'
+import Arrow from '../icons/navbar/Arrow'
+import Burguer from '../icons/navbar/Burguer'
+import Start from '../icons/navbar/Start'
 
 const Navbar = () => {
 
@@ -16,24 +16,10 @@ const Navbar = () => {
         }
     }
 
-    const handleNavMenu = () => {
-        const $navMenu = document.querySelector('.nav-menu'),
-            $arrow = document.querySelector('.arrow svg')
-
-        if (navMenu) {
-            $navMenu.classList.add('nav-menu-visible')
-            $arrow.style.transform = 'rotate(180deg)'
-        } else {
-            $navMenu.classList.remove('nav-menu-visible')
-            $arrow.style.transform = 'rotate(0deg)'
-        }
-    }
 
     useEffect(() => {
-        handleNavMenu()
         navbarBackground()
-        // eslint-disable-next-line
-    }, [navMenu])
+    }, [])
 
     window.addEventListener('scroll', () => {
         navbarBackground()
@@ -50,7 +36,7 @@ const Navbar = () => {
                     <Burguer />
                 </button>
             </div>
-            <div className='nav-menu'>
+            <div className={'nav-menu ' + (navMenu ? 'nav-menu-visible' : null)}>
                 <div className='arrow'>
                     <button onClick={() => { setNavMenu(false) }} className='cursor-pointer'>
                         <Arrow />
